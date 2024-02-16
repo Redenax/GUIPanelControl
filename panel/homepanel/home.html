@@ -42,7 +42,8 @@
     }
 
     .offline-bar {
-      background-color: red; /* Colore rosso per la barra offline */
+      background-color: red;
+      /* Colore rosso per la barra offline */
       height: 100%;
       width: 25%;
       transition: width 1s;
@@ -55,6 +56,53 @@
       top: 50%;
       transform: translate(-50%, -50%);
       color: white;
+    }
+
+    /* Stile per l'overlay */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Sfondo sfocato */
+      z-index: 999;
+      /* Assicura che l'overlay sia sopra tutti gli altri elementi */
+      display: none;
+      /* Inizialmente nascosto */
+    }
+
+    /* Stile per la finestra modale */
+    #modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      z-index: 1000;
+      /* Assicura che la finestra modale sia sopra l'overlay */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      /* Effetto ombreggiatura */
+      display: none;
+      /* Inizialmente nascosto */
+    }
+
+    /* Stile per il pulsante Chiudi */
+    #chiudiModalBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    /* Stile per la tabella all'interno della finestra modale */
+    #modal .table-responsive {
+      max-height: 400px;
+      /* Altezza massima della tabella con scrollbar se necessario */
+      overflow-y: auto;
+      /* Aggiunge una scrollbar verticale se la tabella supera l'altezza massima */
     }
   </style>
 </head>
@@ -79,21 +127,77 @@
   <section class="section-info">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h2>Informazioni Generiche</h2>
-          <div class="progress">
-        
-           
-            <div id="progressBar" class="progress-bar green-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-              
-              <span class="progress-text-inside"><span id="onlineDevicesCount" class="progress-text"></span> Online  Device(s)</span>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Stato complessivo</h2>
+              <div class="progress">
+                <div id="progressBar" class="progress-bar green-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                  <span class="progress-text-inside"><span id="onlineDevicesCount" class="progress-text"></span> Online Device(s)</span>
+                </div>
+                <div id="offlineBar" class="offline-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                  <span class="progress-text-inside"><span id="offlineDevicesCount" class="progress-text"></span> Offline</span>
+                </div>
+              </div>
             </div>
-            <div id="offlineBar" class="offline-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-              <span class="progress-text-inside"><span id="offlineDevicesCount" class="progress-text"></span>  Offline</span>
+          </div>
+        </div>
+        <!-- Tabella con informazioni generali -->
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Informazioni Generali</h2>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Campo 1</th>
+                      <th scope="col">Campo 2</th>
+                      <th scope="col">Campo 3</th>
+                      <th scope="col">Campo 4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Dato 1</td>
+                      <td>Dato 2</td>
+                      <td>Dato 3</td>
+                      <td>Dato 4</td>
+                    </tr>
+                    <tr>
+                      <td>Dato 5</td>
+                      <td>Dato 6</td>
+                      <td>Dato 7</td>
+                      <td>Dato 8</td>
+                    </tr>
+                    <tr>
+                      <td>Dato 9</td>
+                      <td>Dato 10</td>
+                      <td>Dato 11</td>
+                      <td>Dato 12</td>
+                    </tr>
+                    <tr>
+                      <td>Dato 13</td>
+                      <td>Dato 14</td>
+                      <td>Dato 15</td>
+                      <td>Dato 16</td>
+                    </tr>
+                    <tr>
+                      <td>Dato 17</td>
+                      <td>Dato 18</td>
+                      <td>Dato 19</td>
+                      <td>Dato 20</td>
+                    </tr>
+                    <tr>
+                      <td>Dato 21</td>
+                      <td>Dato 22</td>
+                      <td>Dato 23</td>
+                      <td>Dato 24</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-           
-            
-           
           </div>
         </div>
       </div>
@@ -107,7 +211,9 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Seriale Macchina</h5>
-            <p class="card-text">Status: <span class="green-dot"></span> Online </p>
+            <p class="card-text">Connectivity: <span class="green-dot"></span> Online </p>
+            <p class="card-text">Status: <span class="green-dot"></span> ON </p>
+            <p class="card-text">RPM: <span class="green-dot"></span>1200</p>
             <p class="card-text">Sim Signal: <span class="green-dot"></span> 100% </p>
           </div>
         </div>
@@ -116,40 +222,71 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Seriale Macchina</h5>
-            <p class="card-text">Status: <span class="red-dot"></span> Offline </p>
+            <p class="card-text">Connectivity: <span class="green-dot"></span> Online </p>
+            <p class="card-text">Status: <span class="green-dot"></span> ON </p>
+            <p class="card-text">RPM: <span class="green-dot"></span>1200</p>
+            <p class="card-text">Sim Signal: <span class="green-dot"></span> 100% </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Seriale Macchina</h5>
+            <p class="card-text">Connectivity: <span class="red-dot"></span> Offline </p>
+            <p class="card-text">Status: <span class="red-dot"></span>OFF</p>
+            <p class="card-text">Sim Signal: <span class="red-dot"></span> 0% </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Seriale Macchina</h5>
+            <p class="card-text">Connectivity: <span class="red-dot"></span> Offline </p>
+            <p class="card-text">Status: <span class="red-dot"></span>OFF</p>
             <p class="card-text">Sim Signal: <span class="red-dot"></span> 0% </p>
           </div>
         </div>
       </div>
       <div class="container">
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Campo 1</th>
-                <th scope="col">Campo 2</th>
-                <th scope="col">Campo 3</th>
-                <th scope="col">Campo 4</th>
-                <th scope="col">Campo 5</th>
-                <th scope="col">Campo 6</th>
-                <th scope="col">Campo 7</th>
-                <th scope="col">Campo 8</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Dato 1</td>
-                <td>Dato 2</td>
-                <td>Dato 3</td>
-                <td>Dato 4</td>
-                <td>Dato 5</td>
-                <td>Dato 6</td>
-                <td>Dato 7</td>
-                <td>Dato 8</td>
-              </tr>
-              <!-- Aggiungi più righe con dati se necessario -->
-            </tbody>
-          </table>
+        <button id="mostraDatiBtn" class="btn btn-primary mt-3">Mostra Dati</button>
+        <!-- Pulsante per mostrare/nascondere la tabella -->
+        <!-- Aggiungi un overlay per l'effetto di finestra modale -->
+        <div id="overlay"></div>
+        <!-- Aggiungi un div per la finestra modale -->
+        <div id="modal" class="modal">
+          <button id="chiudiModalBtn" class="btn btn-secondary">Chiudi</button>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Campo 1</th>
+                  <th scope="col">Campo 2</th>
+                  <th scope="col">Campo 3</th>
+                  <th scope="col">Campo 4</th>
+                  <th scope="col">Campo 5</th>
+                  <th scope="col">Campo 6</th>
+                  <th scope="col">Campo 7</th>
+                  <th scope="col">Campo 8</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dato 1</td>
+                  <td>Dato 2</td>
+                  <td>Dato 3</td>
+                  <td>Dato 4</td>
+                  <td>Dato 5</td>
+                  <td>Dato 6</td>
+                  <td>Dato 7</td>
+                  <td>Dato 8</td>
+                </tr>
+                <!-- Aggiungi più righe con dati se necessario -->
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       <!-- Aggiungi altre colonne per ulteriori informazioni -->
@@ -194,6 +331,30 @@
 
     // Aggiungi il numero di dispositivi offline alla pagina HTML
     document.getElementById("offlineDevicesCount").innerText = offlineDevices;
+
+    // Seleziona il pulsante "Mostra Dati"
+    var mostraDatiBtn = document.getElementById("mostraDatiBtn");
+
+    // Seleziona l'overlay e la finestra modale
+    var overlay = document.getElementById("overlay");
+    var modal = document.getElementById("modal");
+
+    // Aggiungi un gestore di eventi al pulsante "Mostra Dati"
+    mostraDatiBtn.addEventListener("click", function() {
+      // Mostra l'overlay e la finestra modale
+      overlay.style.display = "block";
+      modal.style.display = "block";
+    });
+
+    // Seleziona il pulsante "Chiudi" nella finestra modale
+    var chiudiModalBtn = document.getElementById("chiudiModalBtn");
+
+    // Aggiungi un gestore di eventi al pulsante "Chiudi"
+    chiudiModalBtn.addEventListener("click", function() {
+      // Nascondi l'overlay e la finestra modale
+      overlay.style.display = "none";
+      modal.style.display = "none";
+    });
   </script>
 
 </body>
