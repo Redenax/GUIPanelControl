@@ -34,9 +34,13 @@ body {
     border-radius: 10px;
   }
   
-  .footer {
-    border-radius: 10px;
-  }
+   footer {
+      background-color: #333;
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
   
   .container-fluid {
     padding: 0;
