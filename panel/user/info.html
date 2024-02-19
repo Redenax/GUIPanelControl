@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utenti - Dispositivi</title>
+  <!-- Link al file CSS di Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    body {}
+
+    .container {
+      margin: 40px auto;
+      width: 600px;
+    }
+
+    /* Riduci lo spazio vuoto nel dropdown-menu e allinea il testo a sinistra */
+    .dropdown-menu {
+      width: auto;
+    }
+
+    .btn {
+      margin: 5px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="navbar navbar-dark bg-dark">
+    <!-- Logo a sinistra -->
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+    </a>
+    <!-- Dropdown a sinistra -->
+    <div class="ms-auto">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          Utenti
+        </button>
+        <ul style="right:0px;left: auto !important;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="#">Informazioni Personali</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sezione Centrale -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <p class="font-weight-bold display-4">Utente: 1234</p>
+      </div>
+    </div>
+    
+    <!-- Form per modificare i dati -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <form id="dataForm">
+          <div class="mb-3">
+            <label for="seriale" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="seriale" value="###" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="aggiornamento" class="form-label">Cognome</label>
+            <input type="text" class="form-control" id="aggiornamento" value="###" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="status" class="form-label">Indirizzo</label>
+            <input type="text" class="form-control" id="status" value="###" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="segnalesignal" class="form-label">Città</label>
+            <input type="text" class="form-control" id="segnalesignal" value="###" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="connettivita" class="form-label">Provincia</label>
+            <input type="text" class="form-control" id="connettivita" value="###" readonly>
+          </div>
+          <button type="button" class="btn btn-primary" id="enableEditBtn">Abilita Modifica</button>
+          <button type="button" class="btn btn-danger d-none" id="cancelEditBtn">Annulla Modifica</button>
+          <button type="submit" class="btn btn-success d-none" id="submitBtn">Invia Modifiche</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2024 Il tuo nome</p>
+    </div>
+  </footer>
+
+  <!-- Script di Bootstrap 5 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+dwG5urp2RQG6zK4v7h+CfRGmeC8C+st2+2ENwh" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js" integrity="sha384-iZvKS3H+dG6Ji+xX3g/0eAx5UkhZVefx3CLf4wiD0C/QE9m6vH/ACjPnEHIBN+JZ" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      // Abilita la modifica dei campi
+      $('#enableEditBtn').click(function() {
+        $('input').prop('readonly', false);
+        $('#enableEditBtn').addClass('d-none');
+        $('#submitBtn').removeClass('d-none');
+        $('#cancelEditBtn').removeClass('d-none');
+      });
+
+      // Annulla la modifica
+      $('#cancelEditBtn').click(function() {
+        $('input').prop('readonly', true);
+        $('#enableEditBtn').removeClass('d-none');
+        $('#submitBtn').addClass('d-none');
+        $('#cancelEditBtn').addClass('d-none');
+      });
+    });
+  </script>
+</body>
+
+</html>

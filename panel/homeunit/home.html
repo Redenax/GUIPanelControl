@@ -19,7 +19,10 @@
     .dropdown-menu {
       width: auto;
     }
-    .btn{width: 100%;}
+    .btn{
+      margin: 5px;
+      width: 100%;
+    }
   </style>
 </head>
 
@@ -74,23 +77,23 @@
             <tbody>
               <tr>
                 <td>Seriale Macchina</td>
-                <td>###</td>
+                <td id="ValoreID">###</td>
               </tr>
               <tr>
                 <td>Ultimo Aggiornamento</td>
-                <td>0001-01-01 00:49:56</td>
+                <td id="ValoreUpdate">0001-01-01 00:49:56</td>
               </tr>
               <tr>
                 <td>Status</td>
-                <td>###</td>
+                <td id="ValoreStatus">###</td>
               </tr>
               <tr>
                 <td>Segnale</td>
-                <td>###</td>
+                <td id="ValoreSignal">###</td>
               </tr>
               <tr>
                 <td>Connettività</td>
-                <td>###</td>
+                <td id="ValoreConnettività">###</td>
               </tr>
             </tbody>
           </table>
@@ -102,27 +105,27 @@
           <table class="table">
             <tbody>
               <tr>
-                <td>Velocità vento</td>
+                <td id="ValoreVento">Velocità vento</td>
                 <td>###</td>
               </tr>
               <tr>
-                <td>Temperatura Valle</td>
+                <td id="ValoreTValle">Temperatura Valle</td>
                 <td>###</td>
               </tr>
               <tr>
-                <td>Temperatura Monte</td>
+                <td id="ValoreTMonte">Temperatura Monte</td>
                 <td>###</td>
               </tr>
               <tr>
-                <td>Umidità</td>
+                <td id="ValoreUmidita" >Umidità</td>
                 <td>###</td>
               </tr>
               <tr>
-                <td>Vibrazione</td>
+                <td id="ValoreVibrazione">Vibrazione</td>
                 <td>###</td>
               </tr>
               <tr>
-                <td>Ore di utilizzo giornaliero</td>
+                <td id="ValoreOrario">Ore di utilizzo giornaliero</td>
                 <td>###</td>
               </tr>
             </tbody>
@@ -131,12 +134,12 @@
       </div>
     </div>
   </div>
-   <!-- Footer -->
-  <footer class="text-center">
-    <div class="container">
-      <p>&copy; 2024 Il tuo nome</p>
-    </div>
-  </footer>
+ <!-- Footer -->
+ <footer class="text-center">
+  <div class="container">
+    <p>&copy; 2024 Il tuo nome</p>
+  </div>
+</footer>
 
   <!-- Script di Bootstrap 5 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+dwG5urp2RQG6zK4v7h+CfRGmeC8C+st2+2ENwh" crossorigin="anonymous"></script>
