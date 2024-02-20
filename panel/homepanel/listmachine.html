@@ -17,21 +17,48 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="navbar navbar-dark bg-dark">
-    <!-- Logo a sinistra -->
-    <a class="navbar-brand" href="#">
-      <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
-    </a>
-    <!-- Dropdown a sinistra -->
-    <div class="ms-auto">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-          Utenti
-        </button>
-        <ul style="right:0px;left: auto !important;"class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Informazioni Personali</a></li>
-          <li><a class="dropdown-item" href="#">Logout</a></li>
+  <!-- Header per larghezza superiore a 800px -->
+  <header class="navbar navbar-dark bg-dark d-none d-md-block">
+    <div class="container">
+      <!-- Logo al posto della scritta "Header Desktop" -->
+      <a class="navbar-brand" href="#">
+        <img src="logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+      </a>
+      <div class="ms-auto">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Utenti
+          </button>
+          <ul style="right:0px;left: auto !important;"class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Informazioni Personali</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Header per larghezza inferiore a 800px -->
+  <header class="navbar navbar-dark bg-dark d-md-none">
+    <div class="container">
+      <!-- Logo al posto della scritta "Header Mobile" -->
+      <a class="navbar-brand" href="#">
+        <img src="logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+      </a>
+      <!-- Hamburger menu centrato -->
+      <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Contenuto del menu a comparsa -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link Mobile 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link Mobile 2</a>
+          </li>
+          <!-- Aggiungi altri campi qui -->
         </ul>
       </div>
     </div>
