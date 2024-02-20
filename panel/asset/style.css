@@ -1,0 +1,125 @@
+/* Stili base di Bootstrap */
+
+/* Stili aggiuntivi per personalizzare l'aspetto */
+html, body {
+  height: 100%;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  hr {
+    border-color: #ffffff;
+    border-width: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .navbar-brand {
+    padding: 0;
+  }
+  
+  .card {
+    border-radius: 10px;
+  }
+  
+  .list-group-item {
+    border-radius: 10px;
+  }
+  #include_footer{
+    
+    
+    margin-top: 100px;
+    width: 100%;
+  }
+  html, body, .container {
+    height: 100%;
+  }
+  footer {
+    margin: 0;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #f2f2f2 !important;
+    border-top: 1px solid #ddd !important;
+    width: 100%;
+    
+  }
+  .row{--bs-gutter-x: initial;}
+  .container-fluid {
+    padding: 0;
+    min-width: 10%;
+  }
+  .container {
+    padding: 0;
+    min-width: 10%;
+  }
+  .list-group {
+    margin-top: 10px;
+  }
+  
+  #device-info {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    min-height: 300px;
+    height: 100%;
+  }
+  
+  .col-md-6 {
+    padding: 20px;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    color: #fff;
+  }
+  
+  .list-group-item {
+    background-color: #fff;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* Stili per centrare verticalmente la #device-info */
+  
+  .d-flex {
+    height: 100vh; /* Occupy full viewport height */
+  }
+  
+  
+  
+  .align-items-center {
+    text-align: center; /* Center the text horizontally */
+  }
+  
+  /* Stili per la card dei dispositivi */
+  
+  .card {
+    border-color: #ddd;
+  }
+  
+  .list-group-item {
+    background-color: #fff;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f2f2f2;
+  }
+  
