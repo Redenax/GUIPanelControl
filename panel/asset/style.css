@@ -46,6 +46,12 @@ body {
   html, body, .container {
     height: 100%;
   }
+  .dropdown-menu[data-bs-popper] {
+    top: calc(100%); /* Modifica della posizione verticale */
+    right: 0; /* Posiziona il menu a comparsa sul lato destro */
+    margin-top: 0.125rem; /* Rimuove il margine superiore */
+    left:initial;
+}
   footer {
     margin: 0;
     bottom: 0 !important;
