@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="../asset/style.css" />
   <style>
-   
     /* Riduci lo spazio vuoto nel dropdown-menu e allinea il testo a sinistra */
     .dropdown-menu {
       width: auto;
@@ -25,6 +24,10 @@
     <div class="text-center mb-3">
       <h5 class="fw-bold">Lista Macchine</h5>
     </div>
+    <!-- Aggiunta del campo di input per il filtro di ricerca -->
+    <div class="mb-3">
+      <input type="text" id="filtroNome" class="form-control" placeholder="Filtra per nome...">
+    </div>
     <table class="table">
       <thead>
         <tr>
@@ -37,8 +40,8 @@
           <th>Ultimo Evento</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Genera 10 righe -->
+      <tbody id="tabellaCorpo">
+        <!-- Righe della tabella -->
         <tr>
           <td><a href="../homeunit/home.html">1234</a></td>
           <td>Riga 2</td>
@@ -47,47 +50,8 @@
           <td>Riga 5</td>
           <td>Riga 6</td>
           <td>Riga 7</td>
-        </tr> <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr></tr> <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr></tr> <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr></tr> <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr> <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr> <tr>
+        </tr>
+         <tr>
           <td>Riga 1</td>
           <td>Riga 2</td>
           <td>Riga 3</td>
@@ -133,7 +97,7 @@
           <td>Riga 7</td>
         </tr>
         <tr>
-          <td>Riga 1</td>
+          <td>Riga 7</td>
           <td>Riga 2</td>
           <td>Riga 3</td>
           <td>Riga 4</td>
@@ -141,67 +105,34 @@
           <td>Riga 6</td>
           <td>Riga 7</td>
         </tr>
-        <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr>
-        <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr>
-        <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr>
-        <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr>
-        <tr>
-          <td>Riga 1</td>
-          <td>Riga 2</td>
-          <td>Riga 3</td>
-          <td>Riga 4</td>
-          <td>Riga 5</td>
-          <td>Riga 6</td>
-          <td>Riga 7</td>
-        </tr>
+        <!-- Altre righe della tabella -->
       </tbody>
     </table>
   </div>
 
   <div id="include_footer"></div>
 
- <!-- Script per includere l'header -->
- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script></body> 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <script> 
-   $(function(){
-     $("#include_header").load("../asset/header.html");
-   });
-   $(function(){
-     $("#include_footer").load("../asset/footer.html");
-   });
- </script></body>
+  <!-- Script per includere l'header -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(function() {
+      $("#include_header").load("../asset/header.html");
+    });
+    $(function() {
+      $("#include_footer").load("../asset/footer.html");
+    });
+
+    // Funzione per filtrare la tabella in base al testo inserito nell'input
+    $('#filtroNome').on('input', function() {
+      var filtro = $(this).val().toLowerCase();
+      $('#tabellaCorpo tr').each(function() {
+        var text = $(this).find('td:eq(0)').text().toLowerCase();
+        $(this).toggle(text.indexOf(filtro) > -1);
+      });
+    });
+  </script>
+</body>
 
 </html>
